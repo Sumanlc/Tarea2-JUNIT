@@ -118,16 +118,4 @@ class DiasLluviaTest {
         int resultado = d15.primerDiaLluvia();
         assertNotEquals(32, resultado);
     }
-
-
-
-
-
-
-
-
-
-
-
-
 }
