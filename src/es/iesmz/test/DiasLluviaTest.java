@@ -78,6 +78,51 @@ class DiasLluviaTest {
         int trimestre = d10.trimestreLluvioso();
         assertEquals(1, trimestre);
     }
+    @Test
+    public void testTrimestreLluviosoSinLluvia() {
+        DiasLluvia d11 = new DiasLluvia();
+        int resultado = d11.trimestreLluvioso();
+        assertEquals(1, resultado);
+    }
+    @Test
+    public void testTrimestreLluviosoPrimerTrimestre() {
+        DiasLluvia d12 = new DiasLluvia();
+        for (int i = 1; i <= 3; i++) {
+            for (int j = 1; j <= 31; j++) {
+                if (Math.random() > 0.5) {
+                    d12.registrarDia(j, i, true);
+                }
+            }
+        }
+        int resultado = d12.trimestreLluvioso();
+        assertEquals(1, resultado);
+    }
+    @Test
+    public void testPrimerDiaLluviaEncontrado() {
+        DiasLluvia d13 = new DiasLluvia();
+        d13.registrarDia(15, 4, true);
+        int resultado = d13.primerDiaLluvia();
+        assertEquals(15, resultado);
+    }
+    @Test
+    public void testPrimerDiaLluvia() {
+        DiasLluvia d14 = new DiasLluvia();
+        d14.registrarDia(1, 1, true);
+        int resultado = d14.primerDiaLluvia();
+        assertEquals(1, resultado);
+    }
+    @Test
+    public void testPrimerDiaLluviaDiaInvalido() {
+        DiasLluvia d15 = new DiasLluvia();
+        d15.registrarDia(32, 4, true);
+        int resultado = d15.primerDiaLluvia();
+        assertNotEquals(32, resultado);
+    }
+
+
+
+
+
 
 
 
